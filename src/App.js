@@ -3,7 +3,7 @@ import TodoForm from './Components/TodoForm';
 import TodoList from './Components/TodoList';
 import './App.css';
 
-const App = () => {
+function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
@@ -11,11 +11,13 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} />
+    <div className="app-container">
+      <div className="square-container">
+        <TodoForm addTodo={addTodo} />
+        <TodoList todos={todos} />
+      </div>
     </div>
   );
-};
+}
 
 export default App;

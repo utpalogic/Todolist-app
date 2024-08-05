@@ -1,39 +1,48 @@
 import React, { useState } from 'react';
+import './TodoForm.css';
 
-const TodoForm = ({ addTodo }) => {
+function TodoForm({ addTodo }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
 
-  const handleCreate = () => {
+  const handleAddTodo = () => {
     if (title.length < 8) {
-      setError('Title must be at least 8 characters long.');
+      setError('Title must be at least 8 characters long');
       return;
     }
-    setError('');
-    addTodo({ title, description });
+
+    addTodo({
+      title,
+      description,
+    });
     setTitle('');
     setDescription('');
+    setError('');
   };
 
   return (
     <div className="form-container">
-      <h2>Create Todo</h2>
-      {error && <div className="error">{error}</div>}
-      <input
-        type="text"
-        placeholder="Title (min 8 characters)"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        placeholder="Description (optional)"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button onClick={handleCreate}>Create</button>
+      <h2>Add Todo</h2>
+      <div className="form">
+        <label htmlFor="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        {error && <p className="error">{error}</p>}
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <button onClick={handleAddTodo}>Create</button>
+      </div>
     </div>
   );
-};
+}
 
 export default TodoForm;

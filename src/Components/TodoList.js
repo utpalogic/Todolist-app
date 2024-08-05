@@ -1,12 +1,13 @@
 import React from 'react';
+import './TodoList.css';
 
 const TodoList = ({ todos }) => {
   return (
-    <div className="todos-container">
+    <div className="todo-list">
       {todos.map((todo, index) => (
-        <div className="todo" key={index}>
-          <h3>{todo.title}</h3>
-          {todo.description && <p>{todo.description}</p>}
+        <div key={index} className="todo">
+          <h3 title={todo.title}>{todo.title}</h3>
+          <p>{todo.description}</p>
         </div>
       ))}
     </div>

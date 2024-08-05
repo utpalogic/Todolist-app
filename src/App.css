@@ -1,59 +1,17 @@
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-.form-container {
-  border: 2px solid #0066cc;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px; /* Fixed width for the form */
-  background-color: #e6f0ff;
-  box-sizing: border-box; /* Ensures padding and border are included in width */
-}
-
-input, textarea {
-  width: calc(100% - 22px); /* Adjust for padding and border */
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #0099ff;
-  border-radius: 4px;
-  box-sizing: border-box; /* Ensures padding and border are included in width */
-}
-
-button {
-  background-color: #0099ff;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%; /* Full width of the form */
-  box-sizing: border-box; /* Ensures padding is included in width */
-}
-
-button:hover {
-  background-color: #007acc;
-}
-
-.error {
-  color: red;
-  margin: 10px 0;
-}
-
-.todos-container {
+.app-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 50px; 
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; 
 }
 
- .todo { 
-   border: 1px solid #0066cc; 
-   border-radius: 8px; 
-   padding: 10px; 
-   background-color: #cce0ff; 
-   width: 300px; 
-   box-sizing: border-box; 
- }
+.square-container {
+  border: 2px solid #000; 
+  border-radius: 15px; 
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #fff; 
+  width: 80%; 
+  max-width: 1200px; 
+}
