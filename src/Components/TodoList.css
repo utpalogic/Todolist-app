@@ -1,0 +1,25 @@
+.todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.todo {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 22%; 
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo h3 {
+  margin: 0;
+  font-size: 1.2em;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 100%; 
+}
