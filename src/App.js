@@ -10,11 +10,17 @@ function App() {
     setTodos([...todos, todo]);
   };
 
+  const deleteTodo = (index) => {
+    setTodos(todos.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="app-container">
       <div className="square-container">
         <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} />
+        <div className="todo-list-wrapper">
+          <TodoList todos={todos} onDelete={deleteTodo} />
+        </div>
       </div>
     </div>
   );
