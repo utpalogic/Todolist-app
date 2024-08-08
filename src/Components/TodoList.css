@@ -1,25 +1,98 @@
+/* Container to hold both form and todo list */
+.square-container {
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 90%; /* Adjust based on your design */
+  max-width: 1200px; /* Adjust based on your design */
+  display: flex;
+  flex-direction: column; /* Stack form and todo list vertically */
+  gap: 20px; /* Space between form and todo list */
+  height: 80vh; /* Ensure the container height is restricted */
+  overflow: hidden; /* Hide overflow to ensure scrolling only in specific areas */
+}
+
+/* Add margin below the form */
+.form-container {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* Container specifically for the todo list to handle scrolling */
+.todo-list-wrapper {
+  flex: 1; /* Allow this container to take available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  box-sizing: border-box;
+  height: calc(100% - 60px); /* Adjust based on form height */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+/* Flex container for todos with wrap and gap */
 .todo-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px; /* Adjust spacing between todos */
 }
 
+/* Style for each todo card */
 .todo {
   border: 1px solid #000;
   border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  width: 22%; 
+  padding: 20px; /* Increase padding for better spacing */
+  width: calc(25% - 20px); /* Four todos per row with margin */
   box-sizing: border-box;
+  background-color: #cce0ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content doesn’t overflow the card */
   position: relative;
-  overflow: hidden;
+  min-height: 150px; /* Set a minimum height for the todo cards */
 }
 
+/* Title styling with truncation and ellipsis */
 .todo h3 {
   margin: 0;
-  font-size: 1.2em;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  max-width: 100%; 
+  font-size: 1.3em; /* Slightly larger font size */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  height: 1.5em; /* Adjust height based on your font-size */
+}
+
+/* Description styling with truncation and ellipsis */
+.todo .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+  max-height: 6em; /* Adjust based on the number of lines and line-height */
+}
+
+/* Tooltip for showing full content on hover */
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid #0099ff;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  word-wrap: break-word;
+}
+
+/* Show tooltip on hover */
+.todo:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }

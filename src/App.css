@@ -1,3 +1,4 @@
+/* Ensure that the app container takes full height */
 .app-container {
   display: flex;
   justify-content: center;
@@ -6,12 +7,17 @@
   background-color: #ffffff; 
 }
 
+/* Style for the square container */
 .square-container {
-  border: 2px solid #000; 
-  border-radius: 15px; 
+  border: 2px solid #000;
+  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  background-color: #fff; 
-  width: 80%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 90%; 
   max-width: 1200px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  gap: 20px; 
 }
