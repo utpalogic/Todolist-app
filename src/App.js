@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './Components/TodoForm';
 import TodoList from './Components/TodoList';
-import './App.css';
+import './App.css'; // Global styles
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -14,7 +14,9 @@ function App() {
     <div className="app-container">
       <div className="square-container">
         <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} />
+        <div className="todo-list-wrapper">
+          <TodoList todos={todos} />
+        </div>
       </div>
     </div>
   );

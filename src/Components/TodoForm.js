@@ -23,7 +23,7 @@ function TodoForm({ addTodo }) {
 
   return (
     <div className="form-container">
-      <h2>Add Todo</h2>
+      <h2>TODO-APP</h2>
       <div className="form">
         <label htmlFor="title">Title</label>
         <input
