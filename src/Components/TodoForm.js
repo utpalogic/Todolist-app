@@ -25,7 +25,7 @@ function TodoForm({ addTodo }) {
     <div className="form-container">
       <h2>Add Todo</h2>
       <div className="form">
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Title</label>
         <input
           type="text"
           id="title"
@@ -33,7 +33,7 @@ function TodoForm({ addTodo }) {
           onChange={(e) => setTitle(e.target.value)}
         />
         {error && <p className="error">{error}</p>}
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description">Description</label>
         <textarea
           id="description"
           value={description}

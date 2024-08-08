@@ -7,7 +7,7 @@ const TodoList = ({ todos }) => {
       {todos.map((todo, index) => (
         <div key={index} className="todo">
           <h3 title={todo.title}>{todo.title}</h3>
-          <p>{todo.description}</p>
+          <p data-full-text={todo.description}>{todo.description}</p>
         </div>
       ))}
     </div>
@@ -15,3 +15,4 @@ const TodoList = ({ todos }) => {
 };
 
 export default TodoList;
+
